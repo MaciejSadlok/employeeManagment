@@ -1,0 +1,31 @@
+          <div>
+              <h3><span class="label label-default">Pracownicy:</span></h3>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                   <span class="input-group-text" id="basic-addon1">Szukaj:</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Pracownik..." aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="term">
+              </div>
+            </div>
+            <div class="table-responsive">
+            <table matSort (matSortChange)="sortData($event)" class="table table-hover">
+                  <tr>
+                    <th mat-sort-header="name">Imię i nazwisko</th>
+                    <th mat-sort-header="hours">Ilość godzin</th>
+                    <th mat-sort-header="ratePerHour">Stawka godzinowa</th>
+                    <th mat-sort-header="summaryBrutto">Suma Brutto</th>
+                    <th mat-sort-header="summaryNetto">Suma Netto</th>
+                  </tr>
+                <tbody>
+                  <tr *ngFor="let employee of employees | filter:term;let i = index">
+                    <td (click)="changeValueOfSelectedEmployee($event)" id="name+{{i}}">{{employee.name}}</td>
+                    <td type="number" (click)="changeValueOfSelectedEmployee($event)" id="hours+{{i}}">{{employee.hours}}</td>
+                    <td (click)="changeValueOfSelectedEmployee($event)" id="ratePerHour+{{i}}">{{employee.ratePerHour}}</td>
+                    <td (click)="changeValueOfSelectedEmployee($event)" id="summaryBrutto+{{i}}">{{employee.summaryBrutto}}</td>
+                    <td (click)="changeValueOfSelectedEmployee($event)" id="summaryNetto+{{i}}">{{employee.summaryNetto}}</td>
+                    <td><button id="{{employee.id}}" value="{{employee.name}}" type="number" (click)="deleteEmployee($event)">Persona non grata</button></td>
+                  </tr>
+                </tbody>
+            </table>
+      </div>
+

@@ -1,0 +1,23 @@
+@keyframes example {
+    0%   {background-color:white; left:0px; top:0px;}
+    25%  {background-color:rgb(0, 140, 255); left:200px; top:0px;}
+    50%  {background-color:rgb(139, 192, 174); left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:rgb(189, 44, 44); left:0px; top:0px;}
+}
+
+.container1{
+    display: flex; justify-content: space-around;
+    background-color: rgb(228, 127, 11);
+    height: auto;
+    animation-name: example;
+    animation-duration: 3s;
+  }
+
+.container2{
+    display: flex; justify-content: space-around;
+    background-color: rgb(16, 184, 196);
+    height: auto;
+  }
+
+
