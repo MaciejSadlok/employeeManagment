@@ -1,3 +1,4 @@
+import { DisplayEmployeeService } from './services/display-employee.service';
 import { Component } from '@angular/core';
 import { Employee } from './employeeClass';
 import { FilterPipe } from './filter.pipe';
@@ -8,6 +9,7 @@ import { DeletedEmployee } from './deletedEmployeeClass';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  providers: [DisplayEmployeeService]
 })
 export class AppComponent {
 
