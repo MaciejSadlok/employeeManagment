@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employeeClass';
 import { FilterPipe } from '../filter.pipe';
 import { Sort } from '@angular/material';
+import { DisplayEmployeeService } from '../services/display-employee.service';
 
 @Component({
   selector: 'app-new-employee',
@@ -10,25 +11,26 @@ import { Sort } from '@angular/material';
 })
 export class NewEmployeeComponent implements OnInit {
 
-  id: number;
-  hours: number;
-  ratePerHour: number;
   selectedRate: number;
-  term: any;
-  deletedTerm: any;
+  name: any;
+  hours: any;
   ratePerHourTypes: Array<number> = [0, 177.70, 209.68, 222.13, 231.01, 310.98, 355.40, 399.83];
   summaryBrutto: number;
   summaryNetto: number;
+  employees = this.displayEmployeeService.employees;
 
-
-
-  constructor() { }
+  constructor(private displayEmployeeService: DisplayEmployeeService) { }
 
   ngOnInit() {
   }
 
-
   getWageValueFromForm(event) {
-     this.selectedRate = event.target.value;
+    this.selectedRate = event.target.value;
+ }
+
+  addEmployee() {
+    this.displayEmployeeService.addEmployee(this.name, this.hours, this.selectedRate, this.summaryBrutto, this.summaryNetto,
+    this.employees.length);
   }
+
 }

@@ -1,4 +1,4 @@
-export class Employee{
+export class Employee {
 
     name: string;
     hours: number;
@@ -7,7 +7,7 @@ export class Employee{
     summaryNetto: number;
     id: number;
 
-    constructor(name,hours,ratePerHour,summaryBrutto,summaryNetto,id){
+    constructor(name, hours, ratePerHour, summaryBrutto, summaryNetto, id){
         this.name = name;
         this.hours = hours;
         this.ratePerHour = ratePerHour;

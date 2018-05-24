@@ -1,5 +1,6 @@
 import { DisplayEmployeeService } from './../services/display-employee.service';
 import { Component, OnInit } from '@angular/core';
+import { Sort } from '@angular/material';
 
 @Component({
   selector: 'app-employee-table',
@@ -19,13 +20,13 @@ export class EmployeeTableComponent implements OnInit {
 
   sortData(sort: Sort) {
     const data = this.employees.slice();
-    if (!sort.active || sort.direction == '') {
+    if (!sort.active || sort.direction === '') {
       this.employees = data;
       return;
     }
 
     this.employees = data.sort((a, b) => {
-      let isAsc = sort.direction == 'asc';
+      const isAsc = sort.direction === 'asc';
       switch (sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
         case 'hours': return compare(a.hours, b.hours, isAsc);
@@ -42,4 +43,4 @@ export class EmployeeTableComponent implements OnInit {
 function compare(a, b, isAsc) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
-}
+

@@ -1,20 +1,20 @@
 <div class="example-container">
   <h3><span class="label label-default">Pracownicy:</span></h3>
   <div class="example-container"class="input-group mb-3">
-    <div class="input-group-prepend">
-       <span class="input-group-text" id="basic-addon1">Szukaj:</span>
-    </div>
-    <input type="text" class="form-control" placeholder="Pracownik..." aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="term">
+    <mat-form-field class="example-full-width">
+      <input class="example-full-width" matInput type="text" placeholder="Szukaj pracownika..." [(ngModel)]="term">
+    </mat-form-field>
   </div>
 </div>
 <div class="example-container" class="table-responsive">
-<table matSort (matSortChange)="sortData($event)" class="example-container" class="table table-hover">
-      <tr>
-        <th mat-sort-header="name">Imię i nazwisko</th>
+<table matSort (matSortChange)="sortData($event)" class="example-container" class="table table-hover" >
+      <tr >
+        <th  mat-sort-header="name">Imię i nazwisko</th>
         <th mat-sort-header="hours">Ilość godzin</th>
         <th mat-sort-header="ratePerHour">Stawka godzinowa</th>
         <th mat-sort-header="summaryBrutto">Suma Brutto</th>
         <th mat-sort-header="summaryNetto">Suma Netto</th>
+        <th>Usuń</th>
       </tr>
     <tbody>
       <tr *ngFor="let employee of employees | filter:term;let i = index">

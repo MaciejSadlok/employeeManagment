@@ -1,17 +1,15 @@
 <div class="example-container">
-  <form class="example-form">
+
     <mat-form-field class="example-full-width">
-      <input #name matInput placeholder="Imię i nazwisko">
+      <input matInput placeholder="Imię i nazwisko" [(ngModel)]="name" >
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input #hours matInput type="number" placeholder="Godziny">
+      <input matInput type="number" placeholder="Godziny" [(ngModel)]="hours">
     </mat-form-field>
-  </form>
-      <mat-form-field class="example-form">
-          <mat-select placeholder="Stawka NOK" (change)="getWageValueFromForm($event)">
-            <mat-option value="option" *ngFor="let one of ratePerHourTypes">{{one}}</mat-option>
-          </mat-select>
-      </mat-form-field>
-  <button class="example-form" mat-raised-button color="accent" (click)="addEmployee(name.value,hours.value,ratePerHour,summaryBrutto,summaryNetto,employees.length)">Dodaj</button>
-  <button class="example-form" mat-raised-button color="accent" (click)="addEmployee(name.value,hours.value,ratePerHour,summaryBrutto,summaryNetto,employees.length)">Zapisz dane</button>
+
+          <select placeholder="Stawka NOK" (change)="getWageValueFromForm($event)">
+            <option type="number" value="{{one}}" *ngFor="let one of ratePerHourTypes">{{one}}</option>
+          </select>
+
+  <button class="example-form" mat-raised-button color="accent" (click)="addEmployee()">Dodaj</button>
 </div>
