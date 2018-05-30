@@ -13,8 +13,8 @@ export class NewEmployeeComponent implements OnInit {
 
   selectedRate: any;
   name: any;
-  hours: number;
-  ratePerHourTypes: Array<any> = [{undefined},
+  hours: any;
+  ratePerHourTypes = [{value: undefined, viewValue: '-'},
      {value: 177.70, viewValue: 177.70},
      {value: 209.68, viewValue: 209.68}, 
      {value: 222.13, viewValue: 222.13}, 
@@ -41,11 +41,5 @@ export class NewEmployeeComponent implements OnInit {
       alert('Proszę podać dane!');
     }
   }
-
-  getWageValueFromForm(event) {
-    this.selectedRate = event.target.value;
- }
-
-
-
+  
 }

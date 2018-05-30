@@ -7,7 +7,7 @@
       <input matInput type="number" placeholder="Godziny" [(ngModel)]="hours">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-          <mat-select placeholder="Stawka NOK" (change)="getWageValueFromForm($event)">
+          <mat-select placeholder="Stawka NOK" [(value)]="selectedRate">
             <mat-option value="{{one.value}}" *ngFor="let one of ratePerHourTypes">
             {{one.viewValue}}
             </mat-option>
