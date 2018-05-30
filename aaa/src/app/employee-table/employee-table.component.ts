@@ -10,13 +10,13 @@ import { Sort } from '@angular/material';
 })
 export class EmployeeTableComponent implements OnInit {
 
-  term;
-  employees = [];
+  term: any;
+  employees: Array<any> = [];
 
   constructor(private displayEmployeeService: DisplayEmployeeService) { }
 
   ngOnInit() {
-    this.employees =  this.displayEmployeeService.employees;
+    this.employees = this.displayEmployeeService.employees;
   }
 
   sortData(sort: Sort) {
