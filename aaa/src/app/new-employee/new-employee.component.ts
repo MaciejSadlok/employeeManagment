@@ -11,10 +11,10 @@ import { DisplayEmployeeService } from '../services/display-employee.service';
 })
 export class NewEmployeeComponent implements OnInit {
 
-  selectedRate: number;
+  selectedRate: any;
   name: any;
   hours: any;
-  ratePerHourTypes: Array<number> = [0, 177.70, 209.68, 222.13, 231.01, 310.98, 355.40, 399.83];
+  ratePerHourTypes: Array<any> = [undefined, 177.70, 209.68, 222.13, 231.01, 310.98, 355.40, 399.83];
   summaryBrutto: number;
   summaryNetto: number;
   employees = this.displayEmployeeService.employees;
@@ -24,13 +24,21 @@ export class NewEmployeeComponent implements OnInit {
   ngOnInit() {
   }
 
+    addEmployee() {
+      if (this.name !== undefined && this.hours !== undefined && this.selectedRate !== undefined) {
+      this.displayEmployeeService.addEmployee(this.name, this.hours, this.selectedRate, this.summaryBrutto, this.summaryNetto,
+      this.employees.length);
+      this.name = undefined;
+      this.hours = undefined;
+    } else {
+      alert('Proszę podać dane!');
+    }
+  }
+
   getWageValueFromForm(event) {
     this.selectedRate = event.target.value;
  }
 
-  addEmployee() {
-    this.displayEmployeeService.addEmployee(this.name, this.hours, this.selectedRate, this.summaryBrutto, this.summaryNetto,
-    this.employees.length);
-  }
+
 
 }

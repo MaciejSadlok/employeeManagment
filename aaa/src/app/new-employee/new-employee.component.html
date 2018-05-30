@@ -1,15 +1,13 @@
 <div class="example-container">
-
+  <h3>Wprowadzanie nowych danych o pracownikach:</h3>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Imię i nazwisko" [(ngModel)]="name" >
+      <input matInput placeholder="Imię i nazwisko" [(ngModel)]="name">
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <input matInput type="number" placeholder="Godziny" [(ngModel)]="hours">
     </mat-form-field>
-
           <select placeholder="Stawka NOK" (change)="getWageValueFromForm($event)">
-            <option type="number" value="{{one}}" *ngFor="let one of ratePerHourTypes">{{one}}</option>
+            <option value="{{one}}" *ngFor="let one of ratePerHourTypes">{{one}}</option>
           </select>
-
   <button class="example-form" mat-raised-button color="accent" (click)="addEmployee()">Dodaj</button>
 </div>

@@ -10,6 +10,7 @@ import { Sort } from '@angular/material';
 })
 export class EmployeeTableComponent implements OnInit {
 
+  term;
   employees = [];
 
   constructor(private displayEmployeeService: DisplayEmployeeService) { }

@@ -1,3 +1,11 @@
 .example-full-width {
   width: 100%;
 }
+
+.example-container {
+  display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 193, 252, 0.637);
+    box-align: center;
+    height: 500px;
+  }
