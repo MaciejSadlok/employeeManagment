@@ -1,4 +1,3 @@
-
 import { DisplayEmployeeService } from './services/display-employee.service';
 import { Component } from '@angular/core';
 import { Employee } from './employeeClass';
@@ -12,9 +11,8 @@ import { DeletedEmployee } from './deletedEmployeeClass';
   styleUrls: ['./app.component.css'],
   providers: [DisplayEmployeeService]
 })
-export class AppComponent {
 
- 
+export class AppComponent {
 
   /* displayDeletedEmployee(){
    /*var txt = " ";
@@ -47,6 +45,4 @@ export class AppComponent {
 
 
 } */
-
-
 }

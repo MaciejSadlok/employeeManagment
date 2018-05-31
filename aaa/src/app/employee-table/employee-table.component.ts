@@ -10,6 +10,13 @@ import { Sort } from '@angular/material';
 })
 export class EmployeeTableComponent implements OnInit {
 
+  deletedTerm: any;
+  name: any;
+  hours: any;
+  ratePerHour: any;
+  summaryBrutto: any;
+  summaryNetto: any;
+  id: any;
   term: any;
   employees: Array<any> = [];
 
@@ -18,7 +25,11 @@ export class EmployeeTableComponent implements OnInit {
   ngOnInit() {
     this.employees = this.displayEmployeeService.employees;
   }
-
+  deleteEmployee(){
+    this.displayEmployeeService.deleteEmployee(event, this.name, this.hours, this.ratePerHour, this.summaryBrutto, this.summaryNetto, this.id)
+    this.term = undefined;
+    this.deletedTerm = undefined;
+  }
 
   sortData(sort: Sort) {
     const data = this.employees.slice();
@@ -42,7 +53,6 @@ export class EmployeeTableComponent implements OnInit {
 
 }
 
-function compare(a, b, isAsc) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+  function compare(a, b, isAsc) {
+   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
-

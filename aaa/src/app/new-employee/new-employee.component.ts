@@ -41,5 +41,5 @@ export class NewEmployeeComponent implements OnInit {
       alert('Proszę podać dane!');
     }
   }
-
+  
 }
