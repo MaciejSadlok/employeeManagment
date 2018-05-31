@@ -14,6 +14,10 @@ export class DisplayEmployeeService {
     {name: 'Człowiek Sztos', hours: 355, ratePerHour: 500, summaryBrutto: 93652, summaryNetto: 65000, id: 5},
   ];
 
+  deletedEmployeeArray = [
+    {name: 'Dziki Don', hours: 1550, ratePerHour: 231.01, summaryBrutto: 33333, summaryNetto: 22523, id: 6}
+  ];
+  
   constructor() { }
 
   addEmployee(name, hours, ratePerHour, summaryBrutto, summaryNetto, id) {

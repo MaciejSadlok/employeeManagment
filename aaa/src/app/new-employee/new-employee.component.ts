@@ -32,7 +32,7 @@ export class NewEmployeeComponent implements OnInit {
   }
 
     addEmployee() {
-      if (this.name !== undefined && this.hours !== undefined && this.selectedRate !== this.ratePerHourTypes[0]) {
+      if (this.name !== undefined && this.hours !== undefined && this.selectedRate !== undefined) {
       this.displayEmployeeService.addEmployee(this.name, this.hours, this.selectedRate, this.summaryBrutto, this.summaryNetto,
       this.employees.length);
       this.name = undefined;
@@ -41,5 +41,5 @@ export class NewEmployeeComponent implements OnInit {
       alert('Proszę podać dane!');
     }
   }
-  
+
 }

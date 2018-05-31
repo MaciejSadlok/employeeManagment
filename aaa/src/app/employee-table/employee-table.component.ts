@@ -19,6 +19,7 @@ export class EmployeeTableComponent implements OnInit {
     this.employees = this.displayEmployeeService.employees;
   }
 
+
   sortData(sort: Sort) {
     const data = this.employees.slice();
     if (!sort.active || sort.direction === '') {

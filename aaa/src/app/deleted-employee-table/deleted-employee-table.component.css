@@ -1,0 +1,10 @@
+.example-full-width {
+    width: 100%;
+  }
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(208, 130, 228, 0.993);
+    height: 500px;
+  }
