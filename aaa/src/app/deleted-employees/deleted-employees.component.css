@@ -1,0 +1,16 @@
+mat-card{
+  margin: 60px;
+  background-color: rgba(95, 10, 95, 0.233);
+  max-width: 1000px;
+}
+
+.example-full-width {
+    width: 100%;
+  }
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(59, 66, 68, 0.637);
+    height: 1000px;
+  }

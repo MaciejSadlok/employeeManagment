@@ -1,0 +1,41 @@
+<form [formGroup]="employeeForm" (ngSubmit)="addEmployee()">
+<div class="row">
+  <div class="col-md-12" style="display: inline-grid;">
+    <mat-form-field>
+    <label for="name">Imię:</label>
+    <input matInput type="text" id="name" formControlName="name">
+  </mat-form-field>
+  <div *ngIf="employeeForm.get('name').invalid" style="color: white;">
+      The minimum length is 2 letters and maximum is 25.</div>
+  <mat-form-field>
+    <label for="topic">Nazwisko:</label>
+    <input matInput type="text" id="topic" formControlName="surname">
+  </mat-form-field>
+  <div *ngIf="employeeForm.get('surname').invalid" style="color: white;">
+      The minimum length is 2 letters and maximum is 25.</div>
+  <mat-form-field>
+    <label for="hours">Godziny:</label>
+    <input  matInput type="number" id="hours" formControlName="hours">
+    
+  </mat-form-field>
+  <div *ngIf="employeeForm.get('hours').invalid" style="color: white;">
+    The minimum amount of hours is 0 and maximum is 250!</div>
+  <mat-form-field>
+    <label for="wage">Stawka godzinowa:</label>
+    <mat-select id="wage" formControlName="wage">
+      <mat-option *ngFor="let wage of wageTypes" [value]="wage.value">
+        {{wage.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div *ngIf="employeeForm.get('wage').invalid" style="color: white;">
+      Choose one wage.</div>
+  </div>
+
+  <button type="submit" [disabled]="employeeForm.invalid">Wyslij</button>
+  <button type="button" (click)="onReset()">Wyczyść</button>
+  </div>
+</form>
+
+
+

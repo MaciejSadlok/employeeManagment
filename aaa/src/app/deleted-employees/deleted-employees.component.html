@@ -1,4 +1,5 @@
 <div class="example-container">
+    <mat-card>
    <h3>Usunięci pracownicy:</h3>
      <mat-form-field class="example-full-width">
        <input matInput placeholder="Imię i nazwisko" [(ngModel)]="deletedTerm">
@@ -6,15 +7,17 @@
         <div class="container2" class="table-responsive">
           <table matSort (matSortChange)="sortData($event)" class="table table-hover">
                 <tr>
-                  <th mat-sort-header="name">Imię i nazwisko</th>
+                  <th mat-sort-header="name">Imię</th>
+                  <th mat-sort-header="surname">Nazwisko</th>
                   <th mat-sort-header="hours">Ilość godzin</th>
                   <th mat-sort-header="ratePerHour">Stawka godzinowa</th>
                   <th mat-sort-header="summaryBrutto">Suma Brutto</th>
                   <th mat-sort-header="summaryNetto">Suma Netto</th>
                 </tr>
               <tbody>
-                <tr *ngFor="let deletedEmployee of deletedEmployeeArray | filter:deletedTerm">
+                <tr *ngFor="let deletedEmployee of deletedEmployeeArray | filterDeletedEmployee:deletedTerm">
                   <td>{{deletedEmployee.name}}</td>
+                  <td>{{deletedEmployee.surname}}</td>
                   <td>{{deletedEmployee.hours}}</td>
                   <td>{{deletedEmployee.ratePerHour}}</td>
                   <td>{{deletedEmployee.summaryBrutto}}</td>
@@ -23,4 +26,5 @@
               </tbody>
     </table>
   </div>
+  </mat-card>
 </div>

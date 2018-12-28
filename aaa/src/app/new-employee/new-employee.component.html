@@ -1,17 +1,7 @@
 <div class="example-container">
-  <h3>Wprowadzanie nowych danych o pracownikach:</h3>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Imię i nazwisko" [(ngModel)]="name">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <input matInput type="number" placeholder="Godziny" [(ngModel)]="hours">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-          <mat-select placeholder="Stawka NOK" [(value)]="selectedRate">
-            <mat-option value="{{one.value}}" *ngFor="let one of ratePerHourTypes">
-            {{one.viewValue}}
-            </mat-option>
-          </mat-select>
-    </mat-form-field>
-  <button class="example-form" mat-raised-button color="accent" (click)="addEmployee()">Dodaj</button>
+    <mat-card>
+      <h3>Wprowadź dane nowego pracownika:</h3>
+      <app-reactive-form></app-reactive-form>
+   
+  </mat-card> 
 </div>

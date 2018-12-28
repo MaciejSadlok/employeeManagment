@@ -10,16 +10,21 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
-import { EmployeeTableComponent } from './employee-table/employee-table.component';
-import { DeletedEmployeeTableComponent } from './deleted-employee-table/deleted-employee-table.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { DeletedEmployeesComponent } from './deleted-employees/deleted-employees.component';
+import { FilterDeletedEmployeePipe } from './filterDeletedEmployee.pipe';
+import { AppRoutingModule } from './app.routing.module';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterPipe,
     NewEmployeeComponent,
-    EmployeeTableComponent,
-    DeletedEmployeeTableComponent,
+    EmployeesComponent,
+    DeletedEmployeesComponent,
+    FilterDeletedEmployeePipe,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,8 @@ import { DeletedEmployeeTableComponent } from './deleted-employee-table/deleted-
     HttpClientModule,
     ReactiveFormsModule,
     CdkTableModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

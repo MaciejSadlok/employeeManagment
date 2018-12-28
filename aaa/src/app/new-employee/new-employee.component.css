@@ -1,7 +1,10 @@
-.new-employee{
-
-  background-color: rgba(0, 193, 252, 0.637);
+mat-card{
+  margin: 60px;
+  background-color: rgba(95, 10, 95, 0.233);
+  max-width: 500px;
+  min-height: 600px;
 }
+
 
 .example-form {
   min-width: 150px;
@@ -15,9 +18,10 @@
 }
 .example-container {
 display: flex;
+min-height: 1000px;
+background-color: rgba(59, 66, 68, 0.637);
   flex-direction: column;
-  background-color: rgba(0, 193, 252, 0.637);
-  box-align: center;
+  
 }
 
 

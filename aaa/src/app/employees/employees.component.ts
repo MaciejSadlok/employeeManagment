@@ -3,15 +3,16 @@ import { Component, OnInit } from '@angular/core';
 import { Sort } from '@angular/material';
 
 @Component({
-  selector: 'app-employee-table',
-  templateUrl: './employee-table.component.html',
-  styleUrls: ['./employee-table.component.css'],
+  selector: 'app-employees',
+  templateUrl: './employees.component.html',
+  styleUrls: ['./employees.component.css'],
 
 })
-export class EmployeeTableComponent implements OnInit {
+export class EmployeesComponent implements OnInit {
 
   deletedTerm: any;
   name: any;
+  surname: any;
   hours: any;
   ratePerHour: any;
   summaryBrutto: any;
@@ -26,9 +27,9 @@ export class EmployeeTableComponent implements OnInit {
     this.employees = this.displayEmployeeService.employees;
   }
   deleteEmployee(){
-    this.displayEmployeeService.deleteEmployee(event, this.name, this.hours, this.ratePerHour, this.summaryBrutto, this.summaryNetto, this.id)
+    this.displayEmployeeService.deleteEmployee(event, this.name, this.surname, this.hours, this.ratePerHour, this.summaryBrutto, this.summaryNetto, this.id)
+          
     this.term = undefined;
-    this.deletedTerm = undefined;
   }
 
   sortData(sort: Sort) {

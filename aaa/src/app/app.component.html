@@ -1,5 +1,6 @@
-<div>
-<app-new-employee></app-new-employee>
-<app-employee-table></app-employee-table>
-<app-deleted-employee-table></app-deleted-employee-table>
-</div>
+<nav>
+    <a routerLink="/add"><button mat-raised-button color="primary">Add employee</button></a>
+    <a routerLink="/employees"><button mat-raised-button color="primary">Employees</button></a>
+    <a routerLink="/deletedemployees"><button mat-raised-button color="primary">Deleted employees</button></a>
+</nav>
+<router-outlet></router-outlet>
