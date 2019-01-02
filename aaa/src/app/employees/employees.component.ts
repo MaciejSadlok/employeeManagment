@@ -5,7 +5,7 @@ import { Sort } from '@angular/material';
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.css'],
+  styleUrls: ['./employees.component.scss'],
 
 })
 export class EmployeesComponent implements OnInit {
@@ -26,9 +26,10 @@ export class EmployeesComponent implements OnInit {
   ngOnInit() {
     this.employees = this.displayEmployeeService.employees;
   }
+
   deleteEmployee(){
-    this.displayEmployeeService.deleteEmployee(event, this.name, this.surname, this.hours, this.ratePerHour, this.summaryBrutto, this.summaryNetto, this.id)
-          
+    this.displayEmployeeService.deleteEmployee(event, this.name, this.surname, this.hours,
+    this.ratePerHour, this.summaryBrutto, this.summaryNetto, this.id);
     this.term = undefined;
   }
 
@@ -43,10 +44,11 @@ export class EmployeesComponent implements OnInit {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
+        case 'surname': return compare(a.name, b.name, isAsc);
         case 'hours': return compare(a.hours, b.hours, isAsc);
-        case 'ratePerHour': return compare(a.ratePerHour, b.ratePerHour, isAsc);
-        case 'summaryBrutto': return compare(a.summaryBrutto, b.summaryBrutto, isAsc);
-        case 'summaryNetto': return compare(a.summaryNetto, b.summaryNetto, isAsc);
+        case 'wage': return compare(a.ratePerHour, b.ratePerHour, isAsc);
+        case 'gross': return compare(a.summaryBrutto, b.summaryBrutto, isAsc);
+        case 'net': return compare(a.summaryNetto, b.summaryNetto, isAsc);
         default: return 0;
       }
     });

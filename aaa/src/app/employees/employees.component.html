@@ -23,7 +23,7 @@
         <td (click)="changeValueOfSelectedEmployee($event)" id="wage+{{i}}">{{employee.wage}}</td>
         <td (click)="changeValueOfSelectedEmployee($event)" id="gross+{{i}}">{{employee.gross}}</td>
         <td (click)="changeValueOfSelectedEmployee($event)" id="net+{{i}}">{{employee.net}}</td>
-        <td><button id="{{employee.id}}" value="{{employee.name}}" type="number" (click)="deleteEmployee($event)">Persona non grata</button></td>
+        <td><button id="{{employee.id}}" value="{{employee.name + ' ' + employee.surname}}" type="number" (click)="deleteEmployee($event)">Persona non grata</button></td>
       </tr>
     </tbody>
 </table>

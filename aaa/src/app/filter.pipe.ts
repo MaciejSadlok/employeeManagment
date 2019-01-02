@@ -9,10 +9,11 @@ export class FilterPipe implements PipeTransform {
 
     transform(employees: any, term: any) {
 
-        if(term == undefined) return employees
+        if(term == undefined) return employees;
 
         return employees.filter(function(employee){
-            return employee.name.toLowerCase().includes(term.toLowerCase());
+            return employee.name.toLowerCase().includes(term.toLowerCase()) +
+            employee.surname.toLowerCase().includes(term.toLowerCase());
         })
     }
 }

@@ -8,11 +8,19 @@ import { DeletedEmployee } from './deletedEmployeeClass';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [DisplayEmployeeService]
+  styleUrls: ['./app.component.scss'],
 })
 
 export class AppComponent {
+
+  public amountEmployees: number;
+
+  constructor(private displayEmployeeService: DisplayEmployeeService) {
+    this.displayEmployeeService.amountEmployees.subscribe((amountEmployees) =>
+      this.amountEmployees = amountEmployees
+    );
+  }
+
 
   /* displayDeletedEmployee(){
    /*var txt = " ";
@@ -23,7 +31,6 @@ export class AppComponent {
       document.getElementById("deletedEmployee").innerHTML = txt;
       console.log(this.deletedEmployeeArray);
     }
-
 
   changeValueOfSelectedEmployee(event){
     let insertedValue: any = prompt(document.getElementById(event.target.id).innerHTML);

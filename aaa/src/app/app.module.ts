@@ -15,6 +15,7 @@ import { DeletedEmployeesComponent } from './deleted-employees/deleted-employees
 import { FilterDeletedEmployeePipe } from './filterDeletedEmployee.pipe';
 import { AppRoutingModule } from './app.routing.module';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { DisplayEmployeeService } from './services/display-employee.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     MaterialModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DisplayEmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

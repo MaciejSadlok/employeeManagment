@@ -1,6 +1,10 @@
 <nav>
+    <a routerLink="/"><button mat-raised-button color="primary">Home page</button></a>
     <a routerLink="/add"><button mat-raised-button color="primary">Add employee</button></a>
     <a routerLink="/employees"><button mat-raised-button color="primary">Employees</button></a>
     <a routerLink="/deletedemployees"><button mat-raised-button color="primary">Deleted employees</button></a>
 </nav>
-<router-outlet></router-outlet>
+<body>
+<h2>Ilość pracownikow to: {{amountEmployees}}</h2>
+  <router-outlet></router-outlet>
+</body>

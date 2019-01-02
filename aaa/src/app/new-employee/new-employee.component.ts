@@ -8,16 +8,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-new-employee',
   templateUrl: './new-employee.component.html',
-  styleUrls: ['./new-employee.component.css']
+  styleUrls: ['./new-employee.component.scss']
 })
 export class NewEmployeeComponent implements OnInit {
-
-
 
   ngOnInit() {
 
   }
 
-
-  
 }

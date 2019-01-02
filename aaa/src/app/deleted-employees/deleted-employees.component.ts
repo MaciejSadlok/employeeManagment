@@ -5,20 +5,20 @@ import { DeletedEmployee } from '../deletedEmployeeClass';
 @Component({
   selector: 'app-deleted-employees',
   templateUrl: './deleted-employees.component.html',
-  styleUrls: ['./deleted-employees.component.css']
+  styleUrls: ['./deleted-employees.component.scss']
 })
 export class DeletedEmployeesComponent implements OnInit {
 
   deletedTerm: any;
   term: any;
-  deletedEmployeeArray: Array<any> = []; 
+  deletedEmployeeArray: Array<any> = [];
   employees = this.displayEmployeeService.employees;
- 
+
   constructor(private displayEmployeeService: DisplayEmployeeService) { }
 
   ngOnInit() {
     this.deletedEmployeeArray = this.displayEmployeeService.deletedEmployeeArray;
   }
-   
- 
+
+
 }

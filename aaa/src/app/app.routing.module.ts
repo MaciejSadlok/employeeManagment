@@ -1,3 +1,4 @@
+import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
@@ -5,6 +6,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { DeletedEmployeesComponent } from './deleted-employees/deleted-employees.component';
 
 const appRoutes: Routes = [
+
 {
     path: 'add',
     component: NewEmployeeComponent

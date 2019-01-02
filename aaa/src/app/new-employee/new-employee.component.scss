@@ -1,0 +1,23 @@
+:host {
+  .example-container {
+
+    display: flex;
+    min-height: 1000px;
+    background-color: rgba(59, 66, 68, 0.637);
+    flex-direction: column;
+
+  mat-card {
+
+    margin: 60px;
+    background-color: rgba(95, 10, 95, 0.233);
+    max-width: 500px;
+    min-height: 600px;
+  }
+ }
+}
+
+
+
+
+
+

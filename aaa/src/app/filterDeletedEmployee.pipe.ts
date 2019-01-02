@@ -9,7 +9,9 @@ export class FilterDeletedEmployeePipe implements PipeTransform {
 
     transform(deletedEmployeeArray: any, deletedTerm: any) {
 
-        if(deletedTerm == undefined) return deletedEmployeeArray
+        if (deletedTerm === undefined) {
+        return deletedEmployeeArray;
+      }
 
         return deletedEmployeeArray.filter(function(deletedEmployeeArray){
             return deletedEmployeeArray.name.toLowerCase().includes(deletedTerm.toLowerCase());
